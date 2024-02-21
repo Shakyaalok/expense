@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <title>Login </title>
+
+</head>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.5.1/axios.min.js" integrity="sha512-emSwuKiMyYedRwflbZB2ghzX8Cw8fmNVgZ6yQNNXXagFzFOaQmbvQ1vmDkddHjm5AITcBIZfC7k4ShQSjgPAmQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+<body>
+
+
+
+    <nav class="navbar navbar-expand-lg fixed-top" style="background-color:  #610C9F;">
+        <div class="container-fluid">
+            <a class="navbar-brand text-white fw-bold fs-5" href="/index.html">ExpenseApp</a>
+            <button class="navbar-toggler border-0 shadow-none " type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasDarkNavbar" aria-controls="offcanvasDarkNavbar">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+            <div class="offcanvas offcanvas-end text-bg-dark" tabindex="-1" id="offcanvasDarkNavbar" aria-labelledby="offcanvasDarkNavbarLabel">
+                <div class="offcanvas-header" style="border-bottom: 1px solid #940B92;">
+                    <h5 class="offcanvas-title" id="offcanvasDarkNavbarLabel">ExpenseApp</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                </div>
+
+
+
+                <div class="offcanvas-body">
+                    <ul class="navbar-nav justify-content-end flex-grow-1 pe-3 d-flex align-items-center gap-2 m-2">
+                        <li class="nav-item">
+                            <a class="nav-link  text-white p-2 rounded" aria-current="page" href="/index.html">Home</a>
+                        </li>
+                        <!-- <li class="nav-item">
+                            <a class="nav-link text-white  p-2 rounded" href="/about.html">About</a>
+                        </li> -->
+                        <li class="nav-item">
+                            <a class="nav-link text-white  p-2 rounded" href="/contact.html">Contact</a>
+                        </li>
+
+                        <li id="logout_li" class="nav-item cursor">
+
+                        </li>
+                    </ul>
+                    <div class="d-flex align-items-center gap-4 justify-content-center p-2 login_singup">
+                        <div>
+                            <a class="nav-link  p-2 rounded" href="/login.html">Login</a>
+                        </div>
+
+                        <div class="rounded p-2 fw-bold text-white" style="background-color:#940B92;">
+                            <a class="nav-link" href="/signup.html">Signup</a>
+                        </div>
+                    </div>
+
+
+                </div>
+
+            </div>
+        </div>
+
+    </nav>
+    <div>
+        <h1>d</h1>
+    </div>
+
+
+    <div class="container sectionform">
+        <div class="row form">
+            <h2 class="text-center mb-4">Login Form</h2>
+            <h4 id="showmessageoferror"></h4>
+            <form>
+
+
+
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" name="email" class="form-control" id="email" placeholder=" ">
+
+                </div>
+
+
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" name="password" class="form-control" id="password" placeholder=" ">
+
+
+                </div>
+
+
+                <div class="Question">
+                    <a href="/signup.html">
+                        Don't have an account?  <span>SignUp Now</span></a>
+
+                </div>
+
+                <button type="submit" class="btn w-25 btn-success" id="btn-login">Login</button>
+                <p class="mt-1 text-decoration-underline" id="forgetpassword">forget password?</p>
+                <div id="showforgetForm"></div>
+            </form>
+        </div>
+    </div>
+
+
+
+
+    <!-- footer -->
+    <div class="footer">
+        <div class="row" id="footer">
+
+            <div class="col-md-8">
+
+                <h4>Plot: 35 </h4>
+                <h4>Area: Chappraula Gautam Buddha Nagar</h4>
+                <h4>Pincode: 201009 </h4>
+                <h4>State/District: Gautam Buddha Nagar</h4>
+
+            </div>
+            <div class="col-md-4" id="right-footer">
+                <h4>ph No: 888XXX888X</h4>
+            </div>
+        </div>
+
+        <!-- sub-footer -->
+        <div id="sub-footer">
+            <div class="row">
+                <div class="col-md-12" style="margin-top: 6px;">
+                    <p>2023@ copyright reserved</p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+
+
+
+
+    <script src="	https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        const loginBtn = document.getElementById('btn-login')
+        loginBtn.addEventListener('click', login);
+
+        const forgetpasswordBtn = document.getElementById('forgetpassword').addEventListener('click', forgetPasswordTextArea)
+
+        function forgetPasswordTextArea() {
+            const forgetTab = document.getElementById('forgetpassword')
+            forgetTab.style.display = 'none'
+            const Form = document.getElementById('showforgetForm')
+            Form.innerHTML = `   <div class="form-group mt-3">
+                    <label for="email">Email</label>
+                    <input type="email" name="existingEmailId" class="form-control" id="existingEmailId" placeholder="Enter your register mail id">
+                    <button type="submit" class="btn w-25 btn-success mt-2" id="btn-forgetSubmit" onclick='sentEmail'>Submit</button>
+                </div>`
+            const forgetForm = document.getElementById('btn-forgetSubmit').addEventListener('click', sentEmail)
+
+        }
+        //sending the link
+        function sentEmail(e) {
+            e.preventDefault();
+            const email = document.getElementById('existingEmailId').value;
+            // console.log(email)
+            const token = localStorage.getItem('token');
+            axios.post(`http://localhost:4000/password/forgotpassword`, {
+                    email
+                })
+                .then((response) => {
+                    // console.log(response)
+                    showMessageonTop(response.data.message)
+                })
+                .catch((err) => {
+                    console.log('something went wrong', err)
+                })
+
+
+            document.getElementById('existingEmailId').value = "";
+        }
+
+
+
+        function login(e) {
+            e.preventDefault()
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
+
+            const user = {
+                email: email,
+                password: password
+            }
+
+            axios.post('http://localhost:4000/user/login', user)
+                .then((response) => {
+                    showMessageonTop(response.data.message);
+
+                    if (response.status === 201) {
+                        localStorage.setItem('token', response.data.token)
+                        window.location.href = '/expense.html';
+                    }
+                })
+                .catch((err) => {
+                    console.log('error from frontend login html file', err)
+                })
+
+
+            document.getElementById('email').value = '';
+            document.getElementById('password').value = '';
+
+        }
+
+        document.getElementById('logout').addEventListener('click', Logout);
+        // console.log(Logout)
+
+        function Logout() {
+            const token = localStorage.getItem('token');
+            // console.log('token for logout', token)
+
+        }
+
+
+
+
+
+
+
+
+        // logout
+        window.addEventListener('DOMContentLoaded', () => {
+            const token = localStorage.getItem('token');
+            if (token) {
+                const logoutButtonLi = document.getElementById('logout_li');
+                logoutButtonLi.innerHTML = `<a class="nav-link  p-2 rounded text-white pointer" id="logoutAnchor" onclick="logout()">Logout</a>`;
+            } else {
+                showMsgOnTop('something went wrong')
+            }
+        })
+
+
+        function logout() {
+            localStorage.removeItem('token');
+            window.location.href = '/login.html';
+        }
+
+
+
+
+
+        function showMessageonTop(message) {
+            const existingEmptyElement = document.getElementById('showmessageoferror');
+            existingEmptyElement.innerHTML = ''
+            const newDiv = document.createElement('div');
+            newDiv.innerHTML = `
+               <div>
+                 ${message}
+                </div>
+            
+            `
+            existingEmptyElement.appendChild(newDiv)
+
+        }
+    </script>
+</body>
+
+
+
+</html>

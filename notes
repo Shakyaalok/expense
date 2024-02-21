@@ -1,0 +1,7 @@
+about token
+1. ee genereate the toekn from backend
+2.we send the token from frontend to the local storage
+3. we get the token from local storage to the front api parts
+4. to protect our routes we use a middle of auth so that if a user does not have any token and they cannot accesses our webPages
+
+// when a user purcahse premium and they login again and if ispremiumuser is undefined then chechk also whther we are at the time of login or not 

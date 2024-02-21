@@ -1,0 +1,17 @@
+steps to run the project
+1. sets the env file --> all api key are provided below copy and paste those all as it is in .env file
+2. npm i to install all dependencies
+3. and then run a command--> npm start 
+4. click on buy premium button to see all premium features 
+note that:- amount will not be deducted
+5. after successfully click on buypremium to show the leaderboard reload the page again
+
+
+// put these all in .env file  
+PORT = 4000
+Database_Schema = expense_app
+Database_Username = root
+Database_Password = alokshakya
+RazorPay_Key_Id = rzp_test_0cprP8W6d4Pk0k
+RazorPay_Key_Secret = fko5GMbOchVd9jHVv7yWbPZD
+SendinBlue_Api_key = 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

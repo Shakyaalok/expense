@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+    <title>Expense App</title>
+</head>
+
+<body>
+
+
+    <nav class="navbar navbar-expand-lg fixed-top" style="background-color:  #610C9F;">
+        <div class="container-fluid">
+            <a class="navbar-brand text-white fw-bold fs-5" href="/index.html">ExpenseApp</a>
+            <button class="navbar-toggler border-0 shadow-none " type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasDarkNavbar" aria-controls="offcanvasDarkNavbar">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+            <div class="offcanvas offcanvas-end text-bg-dark" tabindex="-1" id="offcanvasDarkNavbar" aria-labelledby="offcanvasDarkNavbarLabel">
+                <div class="offcanvas-header" style="border-bottom: 1px solid #940B92;">
+                    <h5 class="offcanvas-title" id="offcanvasDarkNavbarLabel">ExpenseApp</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                </div>
+                <div class="offcanvas-body">
+                    <ul class="navbar-nav justify-content-end flex-grow-1 pe-3 d-flex align-items-center gap-2 m-2">
+                        <li class="nav-item">
+                            <a class="nav-link  text-white p-2 rounded" aria-current="page" href="/index.html">Home</a>
+                        </li>
+                        <!-- <li class="nav-item">
+                            <a class="nav-link text-white  p-2 rounded" href="/about.html">About</a>
+                        </li> -->
+                        <li class="nav-item">
+                            <a class="nav-link text-white  p-2 rounded" href="/contact.html">Contact</a>
+                        </li>
+
+                        <li id="logout_li" class="nav-item cursor">
+
+                        </li>
+                    </ul>
+                    <div class="d-flex align-items-center gap-4 justify-content-center p-2 login_singup">
+                        <div>
+                            <a class="nav-link  p-2 rounded" href="/login.html">Login</a>
+                        </div>
+                        <div class="rounded p-2 fw-bold text-white" style="background-color:#940B92;" id="hidbutton">
+                            <a class="nav-link" href="/signup.html">Signup</a>
+                        </div>
+                        <div class="rounded p-2 fw-bold text-white " style="background-color:#940B92; display: none;" id="expenseNavButton">
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <div>
+        <h1>d</h1>
+    </div>
+
+    <!-- hero section -->
+    <div class="row" id="hero-row">
+        <div class="col-md-5" style="padding: 0;">
+            <div class="hero-section section-1">
+                <div id="hero-img" class="shadow p-3 mb-5 bg-white">
+
+                    <div id="hero-img-blur">
+                        <h1>Track your expense with our App</h1>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+        <div class="col-md-7">
+            <div class="hero-section section-2">
+
+                <!-- cards -->
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="card shadow p-3 mb-5 bg-white rounded">
+                            <div class="card-body">
+                                <h5 class="card-title">Tips and Tricks</h5>
+                                <p class="card-text">Want to save your money </p>
+                                <a href="/login.html" class="btn btn-primary border-0" style="background-color: #940B92;">Let's get started</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="card shadow p-3 mb-5 bg-white rounded">
+                            <div class="card-body">
+                                <h5 class="card-title">Savings</h5>
+                                <p class="card-text">Starts your saving now! </p>
+                                <a href="/login.html" class="btn btn-primary border-0" style="background-color: #940B92;">Let's get started</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="card shadow p-3 mb-5 bg-white rounded">
+                            <div class="card-body">
+                                <h5 class="card-title">Track</h5>
+                                <p class="card-text">Instant tracking your savings </p>
+                                <a href="/login.html#" class="btn btn-primary border-0" style="background-color: #940B92;">Let's get started</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="card shadow p-3 mb-5 bg-white rounded">
+                            <div class="card-body">
+                                <h5 class="card-title">Monthly motivation</h5>
+                                <p class="card-text">Give away to motivate you </p>
+                                <a href="/login.html" class="btn btn-primary border-0" style="background-color: #940B92;">Let's get started</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="card shadow p-3 mb-5 bg-white rounded">
+                            <div class="card-body">
+                                <h5 class="card-title">Prevention</h5>
+                                <p class="card-text">Prevent to speding amount on not essential items </p>
+                                <a href="/login.html" class="btn btn-primary border-0" style="background-color: #940B92;">Let's get started</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="card shadow p-3 mb-5 bg-white rounded">
+                            <div class="card-body">
+                                <h5 class="card-title">king of savings</h5>
+                                <p class="card-text">Be a King of not to spend amount more than your savings</p>
+                                <a href="/login.html" class="btn btn-primary border-0" style="background-color: #940B92;">Let's get started</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+        <!-- footer -->
+        <div class="footer">
+            <div class="row" id="footer">
+
+                <div class="col-md-8">
+
+                    <h4>Plot: 35 </h4>
+                    <h4>Area: Chappraula Gautam Buddha Nagar</h4>
+                    <h4>Pincode: 201009 </h4>
+                    <h4>State/District: Gautam Buddha Nagar</h4>
+
+                </div>
+                <div class="col-md-4" id="right-footer">
+                    <h4>ph No: 888XXX888X</h4>
+                </div>
+            </div>
+
+            <!-- sub-footer -->
+            <div id="sub-footer">
+                <div class="row">
+                    <div class="col-md-12" style="margin-top: 6px;">
+                        <p>2023@ copyright reserved</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+
+
+
+
+
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+        <script>
+            // **********************
+            // if the user is already login or not
+            document.addEventListener('DOMContentLoaded', () => {
+                const token = localStorage.getItem('token')
+                    // console.log('isUser', token)
+                if (token) {
+                    const loginButton = document.querySelector('a[href="/login.html"]');
+                    const signupButton = document.querySelector('#hidbutton');
+                    const addExpenseButton = document.getElementById('expenseNavButton');
+                    addExpenseButton.style.display = 'block'
+                    addExpenseButton.innerHTML = `<a class="nav-link" href="/expense.html" id="expenseNavButtonAnchor">Add Expense</a>`;
+                    // console.log(addExpenseButton)
+                    //for logout
+                    const logoutButtonLi = document.getElementById('logout_li');
+                    logoutButtonLi.innerHTML = `<a class="nav-link  p-2 rounded text-white pointer" id="logoutAnchor" onclick="logout()">Logout</a>`;
+                    // addExpenseButton.innerHTML = `Add Expense`;
+                    // console.log(addExpenseButton)
+                    loginButton.style.display = 'none';
+                    signupButton.style.display = 'none';
+
+
+                }
+            });
+
+
+
+
+            function logout() {
+                localStorage.removeItem('token');
+                window.location.href = '/login.html';
+            }
+        </script>
+
+    </div>
+</body>
+
+</html>

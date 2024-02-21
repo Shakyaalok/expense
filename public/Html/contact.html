@@ -160,7 +160,7 @@
                 const decodeToken = parseJwt(token);
                 // console.log('decodeUSer--->', decodeToken.userId)
                 if (decodeToken.userId) {
-                    axios.post('http://localhost:4000/contact', user, {
+                    axios.post('http://54.242.191.158:4000/contact', user, {
                             headers: {
                                 'Authorization': token
                             }
@@ -173,7 +173,7 @@
                         })
                 }
             } else {
-                axios.post('http://localhost:4000/contact/visit', user)
+                axios.post('http://54.242.191.158:4000/contact/visit', user)
                     .then((response) => {
                         // console.log(response)
                         alert('we have recieved your query')

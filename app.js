@@ -1,10 +1,11 @@
 const express = require('express');
 const app = express();
 const path = require('path')
-const morgan = require('morgan')
-    // const helmet = require('helmet');
+const morgan = require('morgan');
+// const helmet = require('helmet');
 const https = require('https')
-const fs = require('fs')
+const fs = require('fs');
+const cors = require('cors')
 
 // dotenv configure
 require('dotenv').config()
@@ -46,18 +47,19 @@ const contactModels = require('./models/contactModels')
 //         // Add other directives as needed
 //     },
 // }));
-
+app.use(cors());
 app.use(express.json());
-app.use(morgan('combined')) // morgan
-app.use(express.static(path.join(__dirname, 'public/Html')))
-app.use('/expense', expenseRoutes)
-app.use('/user', userRoutes)
-app.use('/premium', orderRoutes);
-app.use('/leaderboad', leaderBoadRoutes)
-app.use('/password', forgetPasswordRoutes)
-app.use('/download', downloadRoutes)
-app.use('/contact', contactRoutes)
-app.use('/pagination', paginationRoutes);
+// app.use(morgan('combined')) // morgan
+// app.use(express.static(path.join(__dirname, 'public/Html')))
+app.use('/expens/', express.static(path.join(__dirname, 'public/Html')));
+app.use('/expens/expense', expenseRoutes)
+app.use('/expens/user', userRoutes)
+app.use('/expens/premium', orderRoutes);
+app.use('/expens/leaderboad', leaderBoadRoutes)
+app.use('/expens/password', forgetPasswordRoutes)
+app.use('/expens/download', downloadRoutes)
+app.use('/expens/contact', contactRoutes)
+app.use('/expens/pagination', paginationRoutes);
 //
 
 

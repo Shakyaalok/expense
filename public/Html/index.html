@@ -15,7 +15,7 @@
 
     <nav class="navbar navbar-expand-lg fixed-top" style="background-color:  #610C9F;">
         <div class="container-fluid">
-            <a class="navbar-brand text-white fw-bold fs-5" href="/index.html">ExpenseApp</a>
+            <a class="navbar-brand text-white fw-bold fs-5" href="index.html">ExpenseApp</a>
             <button class="navbar-toggler border-0 shadow-none " type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasDarkNavbar" aria-controls="offcanvasDarkNavbar">
                 <span class="navbar-toggler-icon"></span>
               </button>
@@ -27,13 +27,13 @@
                 <div class="offcanvas-body">
                     <ul class="navbar-nav justify-content-end flex-grow-1 pe-3 d-flex align-items-center gap-2 m-2">
                         <li class="nav-item">
-                            <a class="nav-link  text-white p-2 rounded" aria-current="page" href="/index.html">Home</a>
+                            <a class="nav-link  text-white p-2 rounded" aria-current="page" href="index.html">Home</a>
                         </li>
                         <!-- <li class="nav-item">
                             <a class="nav-link text-white  p-2 rounded" href="/about.html">About</a>
                         </li> -->
                         <li class="nav-item">
-                            <a class="nav-link text-white  p-2 rounded" href="/contact.html">Contact</a>
+                            <a class="nav-link text-white  p-2 rounded" href="contact.html">Contact</a>
                         </li>
 
                         <li id="logout_li" class="nav-item cursor">
@@ -42,10 +42,10 @@
                     </ul>
                     <div class="d-flex align-items-center gap-4 justify-content-center p-2 login_singup">
                         <div>
-                            <a class="nav-link  p-2 rounded" href="/login.html">Login</a>
+                            <a class="nav-link  p-2 rounded" href="login.html">Login</a>
                         </div>
                         <div class="rounded p-2 fw-bold text-white" style="background-color:#940B92;" id="hidbutton">
-                            <a class="nav-link" href="/signup.html">Signup</a>
+                            <a class="nav-link" href="signup.html">Signup</a>
                         </div>
                         <div class="rounded p-2 fw-bold text-white " style="background-color:#940B92; display: none;" id="expenseNavButton">
 
@@ -84,7 +84,7 @@
                             <div class="card-body">
                                 <h5 class="card-title">Tips and Tricks</h5>
                                 <p class="card-text">Want to save your money </p>
-                                <a href="/login.html" class="btn btn-primary border-0" style="background-color: #940B92;">Let's get started</a>
+                                <a href="login.html" class="btn btn-primary border-0" style="background-color: #940B92;">Let's get started</a>
                             </div>
                         </div>
                     </div>
@@ -93,7 +93,7 @@
                             <div class="card-body">
                                 <h5 class="card-title">Savings</h5>
                                 <p class="card-text">Starts your saving now! </p>
-                                <a href="/login.html" class="btn btn-primary border-0" style="background-color: #940B92;">Let's get started</a>
+                                <a href="login.html" class="btn btn-primary border-0" style="background-color: #940B92;">Let's get started</a>
                             </div>
                         </div>
                     </div>
@@ -104,7 +104,7 @@
                             <div class="card-body">
                                 <h5 class="card-title">Track</h5>
                                 <p class="card-text">Instant tracking your savings </p>
-                                <a href="/login.html#" class="btn btn-primary border-0" style="background-color: #940B92;">Let's get started</a>
+                                <a href="login.html" class="btn btn-primary border-0" style="background-color: #940B92;">Let's get started</a>
                             </div>
                         </div>
                     </div>
@@ -113,7 +113,7 @@
                             <div class="card-body">
                                 <h5 class="card-title">Monthly motivation</h5>
                                 <p class="card-text">Give away to motivate you </p>
-                                <a href="/login.html" class="btn btn-primary border-0" style="background-color: #940B92;">Let's get started</a>
+                                <a href="login.html" class="btn btn-primary border-0" style="background-color: #940B92;">Let's get started</a>
                             </div>
                         </div>
                     </div>
@@ -124,7 +124,7 @@
                             <div class="card-body">
                                 <h5 class="card-title">Prevention</h5>
                                 <p class="card-text">Prevent to speding amount on not essential items </p>
-                                <a href="/login.html" class="btn btn-primary border-0" style="background-color: #940B92;">Let's get started</a>
+                                <a href="login.html" class="btn btn-primary border-0" style="background-color: #940B92;">Let's get started</a>
                             </div>
                         </div>
                     </div>
@@ -133,7 +133,7 @@
                             <div class="card-body">
                                 <h5 class="card-title">king of savings</h5>
                                 <p class="card-text">Be a King of not to spend amount more than your savings</p>
-                                <a href="/login.html" class="btn btn-primary border-0" style="background-color: #940B92;">Let's get started</a>
+                                <a href="login.html" class="btn btn-primary border-0" style="background-color: #940B92;">Let's get started</a>
                             </div>
                         </div>
                     </div>
@@ -184,11 +184,11 @@
                 const token = localStorage.getItem('token')
                     // console.log('isUser', token)
                 if (token) {
-                    const loginButton = document.querySelector('a[href="/login.html"]');
+                    const loginButton = document.querySelector('a[href="login.html"]');
                     const signupButton = document.querySelector('#hidbutton');
                     const addExpenseButton = document.getElementById('expenseNavButton');
                     addExpenseButton.style.display = 'block'
-                    addExpenseButton.innerHTML = `<a class="nav-link" href="/expense.html" id="expenseNavButtonAnchor">Add Expense</a>`;
+                    addExpenseButton.innerHTML = `<a class="nav-link" href="expense.html" id="expenseNavButtonAnchor">Add Expense</a>`;
                     // console.log(addExpenseButton)
                     //for logout
                     const logoutButtonLi = document.getElementById('logout_li');
@@ -207,7 +207,7 @@
 
             function logout() {
                 localStorage.removeItem('token');
-                window.location.href = '/login.html';
+                window.location.href = 'login.html';
             }
         </script>
 

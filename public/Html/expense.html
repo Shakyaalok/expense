@@ -31,14 +31,14 @@
                 <div class="offcanvas-body">
                     <ul class="navbar-nav justify-content-end flex-grow-1 pe-3 d-flex align-items-center gap-2 m-2">
                         <li class="nav-item">
-                            <a class="nav-link  text-white p-2 rounded" aria-current="page" href="/index.html">Home</a>
+                            <a class="nav-link  text-white p-2 rounded" aria-current="page" href="index.html">Home</a>
                         </li>
                         <!-- <li class="nav-item">
                             <a class="nav-link text-white  p-2 rounded" href="/about.html">About</a>
                         </li> -->
 
                         <li class="nav-item">
-                            <a class="nav-link text-white  p-2 rounded" href="/contact.html">Contact</a>
+                            <a class="nav-link text-white  p-2 rounded" href="contact.html">Contact</a>
                         </li>
 
 
@@ -215,7 +215,7 @@
 
             // getting the token
             const token = localStorage.getItem('token');
-            await axios.post('http://54.242.191.158:4000/expense/add', expenseDetails, {
+            await axios.post('http://54.242.191.158:4000/expens/expense/add', expenseDetails, {
                     headers: {
                         'Authorization': token
                     }
@@ -249,7 +249,7 @@
 
         function logout() {
             localStorage.removeItem('token');
-            window.location.href = '/login.html';
+            window.location.href = 'login.html';
         }
 
 
@@ -267,7 +267,7 @@
             const userId = decodeToken.userId;
 
             // console.log(userId)
-            const response = await axios.get(`http://54.242.191.158:4000/pagination/${userId}?page=${page}`, {
+            const response = await axios.get(`http://54.242.191.158:4000/expens/pagination/${userId}?page=${page}`, {
                 headers: {
                     'Authorization': token
                 }
@@ -357,7 +357,7 @@
 
 
             // this is commented out due to pagination api because it show all the expense at once when dom is loaded
-            // axios.get('http://54.242.191.158:4000/expense/', {
+            // axios.get('http://54.242.191.158:4000/expens/expense/', {
             //         headers: {
             //             'Authorization': token
             //         }
@@ -374,7 +374,7 @@
         // download report
         function downloadReport() {
             const token = localStorage.getItem('token');
-            axios.get('http://54.242.191.158:4000/download', {
+            axios.get('http://54.242.191.158:4000/expens/download', {
                     headers: {
                         'Authorization': token
                     }
@@ -400,7 +400,7 @@
             const userId = decodeToken.userId
                 // console.log(userId)
 
-            axios.get(`http://54.242.191.158:4000/download/report/${userId}`, {
+            axios.get(`http://54.242.191.158:4000/expens/download/report/${userId}`, {
                     headers: {
                         'Authorization': token
                     }
@@ -443,7 +443,7 @@
 
         // get one expense 
         function getOneExpense(ID) {
-            axios.get(`http://54.242.191.158:4000/expense/${ID}`)
+            axios.get(`http://54.242.191.158:4000/expens/expense/${ID}`)
                 .then((response) => {
                     showExpense(response.data.expense)
                 })
@@ -453,7 +453,7 @@
         // delete Expense
         function deletee(ID) {
             const token = localStorage.getItem('token');
-            axios.delete(`http://54.242.191.158:4000/expense/delete/${ID}`, {
+            axios.delete(`http://54.242.191.158:4000/expens/expense/delete/${ID}`, {
                     headers: {
                         'Authorization': token
                     }
@@ -473,7 +473,7 @@
             const token = localStorage.getItem('token');
 
             try {
-                const response = await axios.get('http://54.242.191.158:4000/expens/expens/premium/payment', {
+                const response = await axios.get('http://54.242.191.158:4000/expens/expens/expens/premium/payment', {
                     headers: {
                         'Authorization': token
                     }
@@ -485,7 +485,7 @@
                     "order_id": response.data.order.id,
                     "handler": async function(response) {
                         try {
-                            const paymentResponse = await axios.post('http://54.242.191.158:4000/expens/premium/updatetransactions', {
+                            const paymentResponse = await axios.post('http://54.242.191.158:4000/expens/expens/premium/updatetransactions', {
                                 order_id: options.order_id,
                                 payment_id: response.razorpay_payment_id,
                             }, {

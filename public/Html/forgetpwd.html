@@ -58,7 +58,7 @@
 
 
             const encodedPassword = encodeURIComponent(password)
-            axios.post(`http://54.242.191.158:4000/password/resetandupdate/${id}?newpassword=${encodedPassword}`)
+            axios.post(`http://54.242.191.158:4000/expens/password/resetandupdate/${id}?newpassword=${encodedPassword}`)
                 .then((response) => {
                     // console.log(response)
                     if (response.status === 201) {

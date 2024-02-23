@@ -78,7 +78,7 @@ const login = async(req, res) => {
         const { email, password } = req.body;
 
         if (!email) {
-            await t.rollback();;
+            await t.rollback();
             return res.status(200).json({ message: 'Email is required' });
         }
         if (!password) {

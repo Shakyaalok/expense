@@ -15,7 +15,7 @@
 
     <nav class="navbar navbar-expand-lg fixed-top" style="background-color:  #610C9F;">
         <div class="container-fluid">
-            <a class="navbar-brand text-white fw-bold fs-5" href="/index.html">ExpenseApp</a>
+            <a class="navbar-brand text-white fw-bold fs-5" href="index.html">ExpenseApp</a>
             <button class="navbar-toggler border-0 shadow-none " type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasDarkNavbar" aria-controls="offcanvasDarkNavbar">
                 <span class="navbar-toggler-icon"></span>
               </button>
@@ -27,23 +27,23 @@
                 <div class="offcanvas-body">
                     <ul class="navbar-nav justify-content-end flex-grow-1 pe-3 d-flex align-items-center gap-2 m-2">
                         <li class="nav-item">
-                            <a class="nav-link  text-white p-2 rounded" aria-current="page" href="/index.html">Home</a>
+                            <a class="nav-link  text-white p-2 rounded" aria-current="page" href="index.html">Home</a>
                         </li>
                         <!-- <li class="nav-item">
                             <a class="nav-link text-white  p-2 rounded" href="/about.html">About</a>
                         </li> -->
                         <li class="nav-item">
-                            <a class="nav-link text-white  p-2 rounded" href="/contact.html">Contact</a>
+                            <a class="nav-link text-white  p-2 rounded" href="contact.html">Contact</a>
                         </li>
 
                         <li id="logout_li" class="nav-item cursor"></li>
                     </ul>
                     <div class="d-flex align-items-center gap-4 justify-content-center p-2 login_singup">
                         <div>
-                            <a class="nav-link  p-2 rounded" href="/login.html">Login</a>
+                            <a class="nav-link  p-2 rounded" href="login.html">Login</a>
                         </div>
                         <div class="rounded p-2 fw-bold text-white" style="background-color:#940B92;" id="hidbutton">
-                            <a class="nav-link" href="/signup.html">Signup</a>
+                            <a class="nav-link" href="signup.html">Signup</a>
                         </div>
 
 
@@ -160,7 +160,7 @@
                 const decodeToken = parseJwt(token);
                 // console.log('decodeUSer--->', decodeToken.userId)
                 if (decodeToken.userId) {
-                    axios.post('http://54.242.191.158:4000/contact', user, {
+                    axios.post('http://54.242.191.158:4000/expens/contact', user, {
                             headers: {
                                 'Authorization': token
                             }
@@ -173,7 +173,7 @@
                         })
                 }
             } else {
-                axios.post('http://54.242.191.158:4000/contact/visit', user)
+                axios.post('http://54.242.191.158:4000/expens/contact/visit', user)
                     .then((response) => {
                         // console.log(response)
                         alert('we have recieved your query')
@@ -215,11 +215,11 @@
             const token = localStorage.getItem('token')
                 // console.log('isUser', token)
             if (token) {
-                const loginButton = document.querySelector('a[href="/login.html"]');
+                const loginButton = document.querySelector('a[href="login.html"]');
                 const signupButton = document.querySelector('#hidbutton');
                 const addExpenseButton = document.getElementById('expenseNavButton');
                 addExpenseButton.style.display = 'block'
-                addExpenseButton.innerHTML = ` <a class="nav-link" href="/expense.html" id="expenseNavButtonAnchor">Add Expense</a>`;
+                addExpenseButton.innerHTML = ` <a class="nav-link" href="expense.html" id="expenseNavButtonAnchor">Add Expense</a>`;
                 // console.log(addExpenseButton)
                 //for logout
                 const logoutButtonLi = document.getElementById('logout_li');
@@ -235,7 +235,7 @@
 
         function logout() {
             localStorage.removeItem('token');
-            window.location.href = '/login.html';
+            window.location.href = 'login.html';
         }
 
 

@@ -97,4 +97,3 @@ sequelize
         })
     })
     .catch((err) => console.log('error in syncing the tables', err))
-    //a

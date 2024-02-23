@@ -163,7 +163,7 @@
             const email = document.getElementById('existingEmailId').value;
             // console.log(email)
             const token = localStorage.getItem('token');
-            axios.post(`http://54.242.191.158:4000/password/forgotpassword`, {
+            axios.post(`http://54.242.191.158:4000/expens/password/forgotpassword`, {
                     email
                 })
                 .then((response) => {
@@ -190,7 +190,7 @@
                 password: password
             }
 
-            axios.post('http://54.242.191.158:4000/user/login', user)
+            axios.post('http://54.242.191.158:4000/expens/user/login', user)
                 .then((response) => {
                     showMessageonTop(response.data.message);
 
